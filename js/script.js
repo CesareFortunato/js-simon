@@ -7,6 +7,7 @@ let timer = 10;
 
 // link html elements to js vars
 const countdown = document.getElementById("countdown");
+const randomNumbersList = document.getElementById("numbers-list")
 
 //SYSTEM
 
@@ -27,12 +28,16 @@ const myCountdown = setInterval(() => {
 
 // numbers to memorize
 
-console.log(randomNumberArray(1, 50, 5));
+const numArr = randomNumberArray(1, 50, 5);
+
+randomNumbersList.innerHTML = numArr.map(num => `<li>${num}</li>`).join('');
 
 
 
 
 // FUNCTIONS
+
+// put a random number inside the array
 
 function randomNumberArray(minNum, maxNum, tot){
     const numArr = [];
@@ -46,6 +51,8 @@ function randomNumberArray(minNum, maxNum, tot){
     }
     return numArr
 }
+
+// pick a random number
 
 function genRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;

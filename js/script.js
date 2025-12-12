@@ -10,6 +10,11 @@ const countdown = document.getElementById("countdown");
 const randomNumbersList = document.getElementById("numbers-list");
 const instructionText = document.getElementById("instructions");
 const form = document.getElementById("answers-form");
+const firstNumUser = document.getElementById("firstNum");
+const secondNumUser = document.getElementById("secondNum");
+const thirdNumUser = document.getElementById("thirdNum");
+const fourthNumUser = document.getElementById("fourthNum");
+const fifthNumUser = document.getElementById("fifthNum");
 
 //SYSTEM
 
@@ -37,6 +42,22 @@ const myCountdown = setInterval(() => {
 const numArr = randomNumberArray(1, 50, 5);
 
 randomNumbersList.innerHTML = numArr.map(num => `<li>${num}</li>`).join('');
+
+// create new array with user answers
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // user input store in new array
+    
+     const userNumbers = [
+        parseInt(firstNumUser.value),
+        parseInt(secondNumUser.value),
+        parseInt(thirdNumUser.value),
+        parseInt(fourthNumUser.value),
+        parseInt(fifthNumUser.value)
+    ];
+})
 
 
 
